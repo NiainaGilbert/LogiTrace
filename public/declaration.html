@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signalement</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Signalement.css">
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="Dashboard">
+    <aside class="NavBar">
+        <h1>Taxi-be</h1>
+        <h3>ANTANANARIVO ADMIN</h3>
+        <ul>
+            <li>Tableau de Bord</li>
+            <li>Gestion de Réseau</li>
+            <li  class="active">Flotte & Chauffeurs</li>
+            <li>Opérations</li>
+        </ul>
+        <button class="incident-btn"><i class="bx bx-alert-triangle"></i>Signaler un incident</button>
+        <button><i class="bx bx-door-open"></i>Déconnexion</button>
+    </aside>
+    
+    <header class="Head">
+        <input type="text" placeholder="Recherche">
+        <p>User</p>
+    </header>
+
+    <main class="signalement-grid">
+        <div class="card form">
+            <label for="tripID">Trip ID(Identifiant du Trajet)</label>
+            <input type="text">
+
+           <label for="tripID">Immatriculation du Vehicule</label>
+           <input type="text">
+           
+           <label for="tripID">Nom du Chauffeur</label>
+           <input type="text">
+           
+            <label for="tripID">type d'incident</label>
+            <input type="text">
+            
+            <label for="tripID">Description detaillées</label>
+            <input type="text">
+            
+            <label for="tripID">Trip ID(Identifiant du Trajet)</label>
+            <input type="file">
+            <button type="submit" class="incident-btn">Soumettre le Rapport</button>
+        </div>
+        
+        <div class="card call911">
+            Vehicules
+        </div>
+
+        <div class="card stat">
+            Vehicules
+        </div>
+
+        <div class="card minimap">
+            Vehicules
+        </div>
+    </main>
+</div>
+
+</body>
+</html>
