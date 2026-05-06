@@ -27,7 +27,7 @@ $user = $_SESSION;
 
 <div class="Dashboard">
     <aside class="NavBar">
-        <h1>Import-Export</h1>
+        <h1>LogiTrace</h1>
         <h3><?= htmlspecialchars($user['role']) ?></h3>
         <ul>
             <li class="active" data-page="dashboard">Tableau de Bord</li>

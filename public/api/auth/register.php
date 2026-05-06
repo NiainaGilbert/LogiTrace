@@ -1,4 +1,12 @@
 <?php
+
+
+/**
+ * API — REGISTER
+ * Méthode : POST
+ *
+ */
+
     require("../../../config/db.php");
     header("Content-Type: application/json");
     session_start();

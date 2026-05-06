@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * API — LOGIN
+ * Méthode : POST
+ *
+ */
+
 require("../../../config/db.php");
 header("Content-type: application/json");
 session_start();
