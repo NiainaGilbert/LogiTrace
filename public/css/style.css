@@ -45,7 +45,6 @@ body
   overflow-x: hidden;
 }
 
-/* ── Layout dashboard ────────────────────────────────────── */
 .Dashboard
 {
     display: grid;

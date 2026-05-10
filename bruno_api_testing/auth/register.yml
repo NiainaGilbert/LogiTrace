@@ -1,0 +1,26 @@
+info:
+  name: register
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/auth/register.php"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "email":"bruno@email.com",
+        "password":"gilbert",
+        "nom":"bruno"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -9,15 +9,20 @@ header("Content-type: application/json");
 
 $input = json_decode(file_get_contents('php://input'), true);
 $id = $input['id'] ?? ($_GET['id'] ?? null);
-if(!$id){ 
+if(!$id)
+{ 
     http_response_code(422);
     echo json_encode(["error"=>"id requis"]);
     exit;
 }
 
-try{
+try
+{
     $stmt = $pdo->prepare("DELETE FROM declaration WHERE id = ?");
     $stmt->execute([$id]);
     echo json_encode(["success"=>true]);
-}catch(Exception $e){ http_response_code(500); echo json_encode(["error"=>"Erreur serveur","message"=>$e->getMessage()]); }
+}catch(Exception $e){ 
+    http_response_code(500);
+    echo json_encode(["error"=>"Erreur serveur","message"=>$e->getMessage()]);
+}
 ?>

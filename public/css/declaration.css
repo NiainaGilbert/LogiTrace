@@ -1,0 +1,336 @@
+/* ── Page Déclarations ────────────────────────────────── */
+
+.declaration-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    padding: 0 24px;
+    padding-top: 24px;
+}
+
+.declaration-header h2 {
+    font-family: var(--font-head);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+/* Filtres */
+.declaration-filters {
+    display: flex;
+    gap: 12px;
+    padding: 0 24px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-input,
+.filter-select {
+    width: 100%;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 14px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(62, 207, 184, 0.06);
+}
+
+.filter-input::placeholder {
+    color: var(--muted);
+}
+
+.filter-select option {
+    background: var(--dark-2);
+    color: var(--white);
+}
+
+/* Container et tableau */
+.declaration-container {
+    padding: 0 24px;
+    background: var(--dark);
+    overflow-x: auto;
+}
+
+.data-table {
+    background: var(--dark-2);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.data-table th {
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+}
+
+.data-table tbody tr:hover {
+    background: rgba(62, 207, 184, 0.05);
+}
+
+.data-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* Status badges */
+.status-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-label.en_attente {
+    background: rgba(245, 166, 35, 0.12);
+    color: var(--warn);
+    border: 1px solid rgba(245, 166, 35, 0.2);
+}
+
+.status-label.en_cours {
+    background: rgba(77, 166, 255, 0.12);
+    color: var(--info);
+    border: 1px solid rgba(77, 166, 255, 0.2);
+}
+
+.status-label.accepte {
+    background: rgba(91, 214, 125, 0.12);
+    color: var(--ok);
+    border: 1px solid rgba(91, 214, 125, 0.2);
+}
+
+.status-label.refuse {
+    background: rgba(244, 81, 108, 0.12);
+    color: var(--alert);
+    border: 1px solid rgba(244, 81, 108, 0.2);
+}
+
+.status-label.termine {
+    background: rgba(245, 166, 35, 0.12);
+    color: var(--warn);
+    border: 1px solid rgba(245, 166, 35, 0.2);
+}
+
+/* Actions dans le tableau */
+.action-btns {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.action-btn:hover {
+    background: var(--accent-dim);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.action-btn.danger:hover {
+    background: rgba(244, 81, 108, 0.12);
+    border-color: rgba(244, 81, 108, 0.3);
+    color: var(--alert);
+}
+
+/* ── Modal ──────────────────────────────────────────── */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: relative;
+    z-index: 101;
+    background: var(--dark-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-header h3 {
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s;
+}
+
+.modal-close:hover {
+    color: var(--white);
+}
+
+/* Form inside modal */
+.modal-form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 14px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(62, 207, 184, 0.06);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--muted);
+}
+
+.form-group textarea {
+    resize: vertical;
+    font-family: var(--font-body);
+}
+
+/* Form actions */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.form-actions button {
+    flex: 1;
+}
+
+/* ── Responsive ────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .declaration-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .declaration-filters {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        min-width: 100%;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .data-table {
+        font-size: 12px;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 10px 8px;
+    }
+}

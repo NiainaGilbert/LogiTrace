@@ -33,7 +33,7 @@ $user = $_SESSION;
             <li class="active" data-page="dashboard">Tableau de Bord</li>
             <li data-page="utilisateur">Gestion Utilisateurs</li>
             <li data-page="stock">Gestion des Colies</li>
-            <li data-page="operation">Opérations</li>
+            <li data-page="declaration">Opérations</li>
         </ul>
         <button class="incident-btn"><i class="bx bx-alert-triangle"></i>Signaler un incident</button>
         <button><i class="bx bx-door-open"></i><a href="logout.php">Déconnexion</a></button>

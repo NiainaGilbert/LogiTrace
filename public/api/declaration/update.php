@@ -4,7 +4,7 @@ header("Content-type: application/json");
 
 /*
 * API — UPDATE DECLARATION
-* Expected JSON payload: { "id": 1, "reference": "REF2", "etat": "livree" }
+* Expected JSON payload: { "id": 1, "reference": "REF123", "type": "import/export", "statut": "en_attente" }
 */
 $input = json_decode(file_get_contents('php://input'), true);
 if(!$input)
@@ -25,7 +25,7 @@ if(!$id)
 $fields = [];
 $params = [];
 
-$allowed = ['reference','expediteur','destinataire','poids','etat'];
+$allowed = ['reference','type','statut','date_de_creation','date_de_soumission'];
 foreach($allowed as $f)
 {
     if(isset($input[$f]))
@@ -43,12 +43,14 @@ if(empty($fields))
 }
 $params[] = $id;
 
-try{
+try
+{
     $sql = "UPDATE declaration SET " . implode(", ", $fields) . " WHERE id = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute($params);
     echo json_encode(["success"=>true]);
-}catch(Exception $e)
+}
+catch(Exception $e)
 {
     http_response_code(500);
     echo json_encode(["error"=>"Erreur serveur","message"=>$e->getMessage()]);

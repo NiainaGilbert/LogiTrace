@@ -40,7 +40,7 @@ try{
         }
     }else
     {
-        $stmt = $pdo->query("SELECT * FROM declaration ORDER BY created_at DESC LIMIT 200");
+        $stmt = $pdo->query("SELECT * FROM declaration ORDER BY date_de_creation DESC LIMIT 200");
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($rows);
     }

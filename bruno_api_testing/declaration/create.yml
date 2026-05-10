@@ -1,0 +1,26 @@
+info:
+  name: create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/declaration/create.php"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |2-
+       { 
+         "reference": "REF123",
+         "type": "import",
+         "statut": "en_attente" 
+       }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

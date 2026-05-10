@@ -1,0 +1,24 @@
+info:
+  name: delete
+  type: http
+  seq: 2
+
+http:
+  method: DELETE
+  url: "{{url}}/declaration/delete.php"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "id":"1"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
